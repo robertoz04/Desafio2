@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Universidad Don Bosco </h3>
+    <div id="map"></div>
+    <script>
+      function miMapa() {
+        var udbSoya = {lat: 13.7159035, lng: -89.1536987};
+        var udbPostgrados = {lat: 13.6739996, lng: -89.2367663};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: udbSoya, udbPostgrados
+        });
+        var image='lododonbosco.png';
+        var marker = new google.maps.Marker({
+          position: udbSoya,
+          title:"Universidad Don Bosco Soyapango",
+          animation: google.maps.Animation.DROP,
+          map: map,
+          icon: image,
+        });
+        var marker1 = new google.maps.Marker({
+          position: udbPostgrados,
+          title:"Universidad Don Bosco Posgrados",
+          animation: google.maps.Animation.DROP,
+          map: map,
+         icon: image,
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEMsFLYh59WIbVZaG1DkIW7RYu9EIw-F8&callback=miMapa">
+    </script>
+  </body>
+</html>
